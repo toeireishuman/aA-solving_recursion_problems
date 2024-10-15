@@ -19,12 +19,22 @@ fibonacci(4); // 3
 fibonacci(10); // 55
 ***********************************************************************/
 
-// your code here
-  
+function fibonacci(number, accum = [0, 1]) {
+	const result = accum[accum.length - 2] + accum[accum.length - 1];
+
+	if (number === 0) {
+		return 0;
+	} else if (number === 1) {
+		return accum[accum.length - 1];
+	} else {
+		accum.push(result);
+		return fibonacci(number - 1, accum);
+	}
+}
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
-  module.exports = fibonacci;
+	module.exports = fibonacci;
 } catch (e) {
-  module.exports = null;
+	module.exports = null;
 }
-  
