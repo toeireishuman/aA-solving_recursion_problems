@@ -29,8 +29,6 @@ const flatten = array => {
 	return newArray;
 };
 
-console.log(flatten([1, [2, [3, [4, [5, [6, 7], 8]]]]]));
-
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
 	module.exports = flatten;
