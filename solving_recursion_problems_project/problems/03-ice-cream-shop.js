@@ -12,13 +12,24 @@ iceCreamShop(['moose tracks'], 'moose tracks'); // true
 iceCreamShop([], 'honey lavender'); // false
 ***********************************************************************/
 
-
-// your code here
-
+// (array X) X -> Boolean
+// Given an array of elements and a specific element, return true
+// if the specific element is contained in the given array.
+function iceCreamShop(array, element) {
+	if (array.length === 0) {
+		return false;
+	} else {
+		if (array[0] === element) {
+			return true;
+		} else {
+			return iceCreamShop(array.slice(1), element);
+		}
+	}
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
-  module.exports = iceCreamShop;
+	module.exports = iceCreamShop;
 } catch (e) {
-  module.exports = null;
+	module.exports = null;
 }
