@@ -12,11 +12,34 @@ reverse("id"); // "di"
 reverse(""); // ""
 ***********************************************************************/
 
-// your code here
+// // String -> String
+// // Given a string, return it reversed.
+// function reverse(word) {
+// 	if (word === "") {
+// 		return "";
+// 	} else {
+// 		return (
+// 			word[word.length - 1] + reverse(word.substring(0, word.length - 1))
+// 		);
+// 	}
+// }
+
+// String -> String
+// Given a string, return it reversed.
+function reverse(word, reversed = "") {
+	if (word === "") {
+		return reversed;
+	} else {
+		return reverse(
+			word.substring(0, word.length - 1),
+			reversed + word[word.length - 1]
+		);
+	}
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
-  module.exports = reverse;
+	module.exports = reverse;
 } catch (e) {
-  module.exports = null;
+	module.exports = null;
 }
