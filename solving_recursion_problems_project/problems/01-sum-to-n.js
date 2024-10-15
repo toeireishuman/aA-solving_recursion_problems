@@ -11,11 +11,29 @@ sumToN(9)  // returns 45
 sumToN(-8)  // returns null
 ***********************************************************************/
 
-// your code here
+// sumToN = function (number) {
+// 	if (number < 0) {
+// 		return null;
+// 	} else if (number === 0) {
+// 		return 0;
+// 	} else {
+// 		return number + sumToN(number - 1);
+// 	}
+// };
+
+sumToN = function (number, current_sum = 0) {
+	if (number < 0) {
+		return null;
+	} else if (number === 0) {
+		return current_sum;
+	} else {
+		return sumToN(number - 1, number + current_sum);
+	}
+};
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
-  module.exports = sumToN;
+	module.exports = sumToN;
 } catch (e) {
-  module.exports = null;
+	module.exports = null;
 }
