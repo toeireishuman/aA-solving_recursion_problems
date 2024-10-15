@@ -12,11 +12,24 @@ addToTwelve([1, 12, 4, 7, 6]); // false
 addToTwelve([1]); // false
 ***********************************************************************/
 
-// your code here
+// (array Number) -> Boolean
+// Given an array of numbers, return true if two consecutive
+// numbers add up to 12.
+function addToTwelve(array) {
+	if (array.length <= 1) {
+		return false;
+	} else {
+		if (array[0] + array[1] === 12) {
+			return true;
+		} else {
+			return addToTwelve(array.slice(1));
+		}
+	}
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
-  module.exports = addToTwelve;
+	module.exports = addToTwelve;
 } catch (e) {
-  module.exports = null;
+	module.exports = null;
 }
