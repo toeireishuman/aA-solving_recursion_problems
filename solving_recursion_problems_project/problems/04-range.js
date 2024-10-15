@@ -10,13 +10,32 @@ range(3, 4); // [3]
 range(7, 6); // []
 ***********************************************************************/
 
+// // Number Number -> (array Number)
+// // Given a start number and an end number, return in an array
+// // all numbers in that range, in increasing order.
+// function range(start, end) {
+// 	if (start >= end) {
+// 		return [];
+// 	} else {
+// 		return [start, ...range(start + 1, end)];
+// 	}
+// }
 
-// your code here
-
+// Number Number -> (array Number)
+// Given a start number and an end number, return in an array
+// all numbers in that range, in increasing order.
+function range(start, end, result = []) {
+	if (start >= end) {
+		return result;
+	} else {
+		result.push(start);
+		return range(start + 1, end, result);
+	}
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
-  module.exports = range;
+	module.exports = range;
 } catch (e) {
-  module.exports = null;
+	module.exports = null;
 }
