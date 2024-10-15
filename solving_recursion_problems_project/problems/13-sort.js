@@ -21,13 +21,51 @@ sort([0, 1, -3]); // [-3, 0, 1]
 sort([]); // []
 ***********************************************************************/
 
-function sort(nums, sorted = []) {
-  // your code here
+// getSmallest = array => {
+// 	return array.reduce((prev, current) => {
+// 		if (prev < current) {
+// 			return prev;
+// 		} else {
+// 			return current;
+// 		}
+// 	});
+// };
+
+// function sort(nums, sorted = []) {
+// 	if (nums.length === 0) {
+// 		return sorted;
+// 	} else {
+// 		const smallest = getSmallest(nums);
+// 		sorted.push(smallest);
+// 		return sort(
+// 			[
+// 				...nums.slice(0, nums.indexOf(smallest)),
+// 				...nums.slice(nums.indexOf(smallest) + 1),
+// 			],
+// 			sorted
+// 		);
+// 	}
+// }
+
+function sort(nums) {
+	if (nums.length <= 1) {
+		return nums;
+	} else {
+		const sortedSublist = sort(nums.slice(1));
+		if (nums[0] <= sortedSublist[0]) {
+			return [nums[0], ...sortedSublist];
+		} else {
+			return [
+				sortedSublist[0],
+				...sort([nums[0], ...sortedSublist.slice(1)]),
+			];
+		}
+	}
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
-  module.exports = sort;
+	module.exports = sort;
 } catch (e) {
-  module.exports = null;
+	module.exports = null;
 }
