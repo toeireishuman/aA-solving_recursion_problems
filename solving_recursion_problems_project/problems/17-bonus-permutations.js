@@ -16,7 +16,7 @@ permutations([1, 2, 3]) // [[1, 2, 3], [1, 3, 2],
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
-  module.exports = permutations;
+	module.exports = permutations;
 } catch (e) {
-  module.exports = null;
+	module.exports = null;
 }

@@ -54,18 +54,17 @@ combinations.
 ***********************************************************************/
 
 function greedyMakeChange(target, coins = [25, 10, 5, 1]) {
-  // no tests for greedyMakeChange so make sure to test this on your own
-  // your code here
+	// no tests for greedyMakeChange so make sure to test this on your own
+	// your code here
 }
 
 function makeBetterChange(target, coins = [25, 10, 5, 1]) {
-  // your code here
+	// your code here
 }
-
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
-  module.exports = makeBetterChange
+	module.exports = makeBetterChange;
 } catch (e) {
-  module.exports = null;
+	module.exports = null;
 }

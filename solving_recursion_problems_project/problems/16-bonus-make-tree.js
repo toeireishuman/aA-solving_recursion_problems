@@ -64,14 +64,16 @@ The call above should return the tree below:
 ***********************************************************************/
 
 const makeTree = (categories, parent) => {
-  // your code here
+	const tree = {};
+
+	for (let i = 0; i < categories.length; i++) {}
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
-  module.exports = makeTree;
+	module.exports = makeTree;
 } catch (e) {
-  module.exports = null;
+	module.exports = null;
 }
 
 // This problem was inspired by a Fun Fun Function video:
